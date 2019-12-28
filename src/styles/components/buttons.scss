@@ -1,0 +1,44 @@
+@import 'colors';
+
+.btn {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.primary-btn {
+  background-color: steelblue;
+
+  &:hover {
+    background-color: rgb(152, 177, 250);
+  }
+}
+
+.secondary-btn {
+  background-color: palevioletred;
+  &:hover {
+    background-color: rgb(207, 160, 176);
+  }
+}
+
+.success-btn {
+  background-color: green;
+  &:hover {
+    background-color: rgb(112, 199, 112);
+  }
+}
+
+.danger-btn {
+  background-color: red;
+  &:hover {
+    background-color: rgb(255, 87, 87);
+  }
+}
+
+.warning-btn {
+  background-color: yellow;
+  &:hover {
+    background-color: rgb(255, 255, 111);
+  }
+}

@@ -1,0 +1,205 @@
+@import 'reset', 'colors', 'typography', 'mixins', 'components/buttons';
+
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  grid-column-gap: 16px;
+  grid-row-gap: 0px;
+  width: 100%;
+  max-width: 1198px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  @media (min-width: 740px) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 48px;
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  @media (min-width: 500px) {
+    grid-column-gap: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border: 1px solid steelblue;
+    overflow: hidden;
+
+    .image {
+    }
+  }
+}
+
+.grid-feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 150, 111);
+  margin-top: 48px;
+  padding: 18px;
+
+  @include for-phone-only {
+    background: purple;
+  }
+
+  @include for-tablet-portrait-up {
+    background: red;
+  }
+
+  @include for-tablet-portait-only {
+    background: green;
+  }
+
+  @include for-tablet-landscape-up {
+    background: pink;
+  }
+
+  @include for-tablet-landscape-only {
+    background: gold;
+  }
+
+  @include for-desktop-up {
+    background: grey;
+  }
+
+  @include for-desktop-only {
+    background: aqua;
+  }
+
+  @include for-big-desktop-up {
+    background: black;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 20px;
+    // grid-auto-rows: minmax(100px, auto);
+
+    /* ------------------------------------------------------------------------*
+		*	grid-column: 1/3; shortcut de: grid-column-start: 1; grid-column-end: 3; *
+		* grid-row: 1/5; shortcut de: grid-row-start: 1; grid-row-end: 5;					 *
+		* ------------------------------------------------------------------------ */
+    .item1 {
+      background-color: red;
+      grid-column: 1 / 3;
+      grid-row: 1 / 18;
+    }
+
+    .item2 {
+      background-color: green;
+      grid-column: 2 / 6;
+      grid-row: 2 / 15;
+    }
+
+    .item3 {
+      background-color: purple;
+      grid-column: 7 / 10;
+      grid-row: 3 / 8;
+    }
+
+    .item4 {
+      background-color: palevioletred;
+      grid-column: 8 / 13;
+      grid-row: 5 / 5;
+    }
+
+    .item5 {
+      background-color: gold;
+      grid-column: 5 / 3;
+      grid-row: 9 / 19;
+    }
+
+    .item6 {
+      grid-column: 8 / 13;
+      grid-row: 15 / 19;
+    }
+  }
+}
+
+.breakpoints-feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 50px;
+
+  h1 {
+    text-align: center;
+  }
+
+  p {
+    padding: 10px;
+    background: #aaa;
+    color: white;
+    text-align: center;
+  }
+
+  .phone-up {
+    background: limegreen;
+  }
+
+  .phone-only {
+    @include for-phone-only {
+      background: limegreen;
+    }
+  }
+
+  .tablet-portait-only {
+    @include for-tablet-portait-only {
+      background: limegreen;
+    }
+  }
+
+  .tablet-portrait-up {
+    @include for-tablet-portrait-up {
+      background: limegreen;
+    }
+  }
+
+  .tablet-landscape-only {
+    @include for-tablet-landscape-only {
+      background: limegreen;
+    }
+  }
+
+  .tablet-landscape-up {
+    @include for-tablet-landscape-up {
+      background: limegreen;
+    }
+  }
+
+  .desktop-only {
+    @include for-desktop-only {
+      background: limegreen;
+    }
+  }
+
+  .desktop-up {
+    @include for-desktop-up {
+      background: limegreen;
+    }
+  }
+
+  .big-desktop-up {
+    @include for-big-desktop-up {
+      background: limegreen;
+    }
+  }
+}
